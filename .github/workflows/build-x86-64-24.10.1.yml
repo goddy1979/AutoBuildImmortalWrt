@@ -95,12 +95,12 @@ jobs:
       - name: Upload ImmortWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: Autobuild-x86-64
+          tag_name: immortalwrt-x86-64
           body_path: ${{ github.workspace }}/info.md
           files: |
             ${{ github.workspace }}/*squashfs-combined-efi.img.gz
             ${{ github.workspace }}/*.sha256
-            ${{ github.workspace }}/*squashfs-combined-efi.vmdk
+            ${{ github.workspace }}/*.vmdk
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
